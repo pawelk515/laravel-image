@@ -47,7 +47,7 @@ class ImageServe
             if (strpos($realPath, public_path()) === 0) {
                 $imagePath = substr($realPath, strlen(public_path()));
             }
-            $destinationFolder = $writePath ?: dirname($imagePath);
+            $writePath = $writePath ?: dirname($imagePath);
             $destinationFolder = public_path(trim($writePath, '/') . '/' . ltrim(dirname($imagePath), '/'));
             
             if (isset($writePath)) {
